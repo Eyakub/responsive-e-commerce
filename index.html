@@ -10,8 +10,91 @@
       rel="stylesheet"
     />
     <!-- Favicon -->
-    
-    <title>Document</title>
+
+    <!-- Required Core stylesheet -->
+    <link
+      rel="stylesheet"
+      href="node_modules/@glidejs/glide/dist/css/glide.core.min.css"
+    />
+
+    <!-- Optional Theme stylesheet -->
+    <link
+      rel="stylesheet"
+      href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Phone Shop</title>
   </head>
-  <body></body>
+  <body>
+    <header class="header" id="header">
+      <div class="navigation">
+        <div class="container">
+          <div class="nav">
+            <div class="nav__hamburger">
+              <svg>
+                <use xlink:href="./images/sprite.svg#icon-menu"></use>
+              </svg>
+            </div>
+            <div class="nav__logo">
+              <a href="#" class="scroll-link">PHONE</a>
+            </div>
+            <div class="nav__menu open">
+              <div class="menu__top">
+                <span class="nav__category">PHONE</span>
+                <a href="#" class="close__toggle">
+                  <svg>
+                    <use xlink:href="./images/sprite.svg#icon-cross">
+                  </svg>
+                </a>
+              </div>
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="#header" class="nav__link scroll-link">Home</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#category" class="nav__link scroll-link">Category</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#news" class="nav__link scroll-link">Blog</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#contact" class="nav__link scroll-link">Contact</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="nav__icons">
+              <a href="#" class="icon__item">
+                <svg>
+                  <use xlink:href="./images/sprite.svg#icon-user">
+                </svg>
+              </a>
+              <a href="#" class="icon__item">
+                <svg>
+                  <use xlink:href="./images/sprite.svg#icon-search">
+                </svg>
+              </a>
+              <a href="#" class="icon__item">
+                <svg>
+                  <use xlink:href="./images/sprite.svg#icon-shopping-basket">
+                </svg>
+                <span id="cart__total">0</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- GlideJS-->
+    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <!--AOS-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/products.js"></script>
+    <script src="./js/slider.js"></script>
+  </body>
 </html>
