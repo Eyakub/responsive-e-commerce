@@ -10,17 +10,16 @@
       rel="stylesheet"
     />
     <!-- Favicon -->
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
 
     <!-- Required Core stylesheet -->
     <link
       rel="stylesheet"
-      href="node_modules/@glidejs/glide/dist/css/glide.core.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.core.css"
     />
-
-    <!-- Optional Theme stylesheet -->
     <link
       rel="stylesheet"
-      href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/css/glide.theme.min.css"
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
@@ -32,21 +31,23 @@
     <header class="header" id="header">
       <div class="navigation">
         <div class="container">
-          <div class="nav">
+          <nav class="nav">
             <div class="nav__hamburger">
               <svg>
                 <use xlink:href="./images/sprite.svg#icon-menu"></use>
               </svg>
             </div>
+
             <div class="nav__logo">
-              <a href="#" class="scroll-link">PHONE</a>
+              <a href="/" class="scroll-link"> PHONE </a>
             </div>
-            <div class="nav__menu open">
+
+            <div class="nav__menu">
               <div class="menu__top">
                 <span class="nav__category">PHONE</span>
                 <a href="#" class="close__toggle">
                   <svg>
-                    <use xlink:href="./images/sprite.svg#icon-cross">
+                    <use xlink:href="./images/sprite.svg#icon-cross"></use>
                   </svg>
                 </a>
               </div>
@@ -68,31 +69,36 @@
 
             <div class="nav__icons">
               <a href="#" class="icon__item">
-                <svg>
-                  <use xlink:href="./images/sprite.svg#icon-user">
+                <svg class="icon__user">
+                  <use xlink:href="./images/sprite.svg#icon-user"></use>
                 </svg>
               </a>
+
               <a href="#" class="icon__item">
-                <svg>
-                  <use xlink:href="./images/sprite.svg#icon-search">
+                <svg class="icon__search">
+                  <use xlink:href="./images/sprite.svg#icon-search"></use>
                 </svg>
               </a>
+
               <a href="#" class="icon__item">
-                <svg>
-                  <use xlink:href="./images/sprite.svg#icon-shopping-basket">
+                <svg class="icon__cart">
+                  <use
+                    xlink:href="./images/sprite.svg#icon-shopping-basket"
+                  ></use>
                 </svg>
                 <span id="cart__total">0</span>
               </a>
             </div>
-          </div>
+          </nav>
         </div>
       </div>
     </header>
 
-    <!-- GlideJS-->
-    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <!-- GlideJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.4.1/glide.min.js"></script>
     <!--AOS-->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- custom js -->
     <script src="./js/index.js"></script>
     <script src="./js/products.js"></script>
     <script src="./js/slider.js"></script>
