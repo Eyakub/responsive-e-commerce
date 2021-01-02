@@ -20,8 +20,6 @@ navClose.addEventListener("click", () => {
     navContainer.style.width = "0";
 });
 
-// glide init
-// new Glide('.glide').mount();
 
 // AOS init
 AOS.init();
