@@ -2,28 +2,28 @@
 
 // get products
 const getProducts = async () => {
-    try {
-        const results = await fetch('/data/products.json');
-        const data = await results.json();
-        const products = data.products;
-        return products;
-    } catch (err) {
-        console.log(err)
-    }
+  try {
+    const results = await fetch('/data/products.json');
+    const data = await results.json();
+    const products = data.products;
+    return products;
+  } catch (err) {
+    console.log(err)
+  }
 };
 
 // load products
 window.addEventListener('DOMContentLoaded', async () => {
-    const products = await getProducts();
-    displayProductItems(products);
+  const products = await getProducts();
+  displayProductItems(products);
 });
 
 const categoryCenter = document.querySelector('.category__center')
 
 // display products
 const displayProductItems = items => {
-    let displayProduct = items.map(product =>
-        `<div class="product">
+  let displayProduct = items.map(product =>
+    `<div class="product">
         <div class="product__header">
           <img src="${product.image}" alt="product">
         </div>
@@ -76,10 +76,10 @@ const displayProductItems = items => {
         </ul>
       </div>  `);
 
-    displayProduct = displayProduct.join("");
-    if (categoryCenter) {
-        categoryCenter.innerHTML = displayProduct;
-    }
+  displayProduct = displayProduct.join("");
+  if (categoryCenter) {
+    categoryCenter.innerHTML = displayProduct;
+  }
 }
 
 // Filtering
@@ -87,18 +87,31 @@ const filterBtn = document.querySelector('.filter-btn');
 const categoryContainer = document.getElementById('category');
 
 if (categoryContainer) {
-    categoryContainer.addEventListener('click', async e => {
-        const target = e.target.closest(".section__title");
-        if (!target) return;
-        const id = target.dataset.id;
-        const products = await getProducts();
+  categoryContainer.addEventListener('click', async e => {
+    const target = e.target.closest(".section__title");
+    if (!target) return;
+    const id = target.dataset.id;
+    const products = await getProducts();
 
-        if (id) {
-            // remove active from buttons
-            Array.from(filterBtn).forEach(btn => {
-                btn.classList.remove("active");
-            });
-            target.classList.add('active');
+    if (id) {
+      // remove active from buttons
+      Array.from(filterBtn).forEach(btn => {
+        btn.classList.remove("active");
+      });
+      target.classList.add("active");
+
+      // load products
+      let menuCategory = products.filter(product => {
+        if (product.category === id) {
+          return product;
         }
-    })
+      });
+
+      if (id === 'All Products'){
+        displayProductItems(products);
+      } else {
+        displayProductItems(menuCategory);
+      }
+    }
+  })
 }
